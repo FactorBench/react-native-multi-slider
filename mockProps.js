@@ -20,15 +20,9 @@ BasicMarker.propTypes = {
 
 const mockProps = {
   values: [0],
-  onValuesChangeStart: function() {
-    console.log("press started");
-  },
-  onValuesChange: function(values) {
-    console.log("changing", values);
-  },
-  onValuesChangeFinish: function(values) {
-    console.log("changed", values);
-  },
+  onValuesChangeStart: () => {},
+  onValuesChange: () => {},
+  onValuesChangeFinish: () => {},
   step: 1,
   min: 0,
   max: 10,
