@@ -157,8 +157,9 @@ class Slider extends React.Component {
   moveOne = gestureState => {
     const unconfined = gestureState.dx + this.state.pastOne;
     const bottom = 0;
-    const top =
-      this.state.positionTwo - (this.stepLength * 8) || this.props.sliderLength;
+    let top =
+      this.state.positionTwo || this.props.sliderLength;
+    top -= this.stepLength * 8;
     const confined =
       unconfined < bottom ? bottom : unconfined > top ? top : unconfined;
     const value = converter.positionToValue(
